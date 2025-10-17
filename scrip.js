@@ -107,7 +107,9 @@ const duLieuBanDau = [
                 })
 
                 if(viTri !== -1){
+                     console.log("Xóa Thành Công", this.danhSach[viTri]);
                     this.danhSach.splice(viTri, 1);
+
                     return true;
                 }
                 return false
@@ -219,9 +221,10 @@ const duLieuBanDau = [
         for(let i of quanLyTruongHoc.danhSach){
             console.log(i);
         }
-        const resultCapNhatThongTin = quanLyTruongHoc.capNhatThongTin("ma2025005", test_2);
+        const maSinhVien = "ma2025005";
+        const resultCapNhatThongTin = quanLyTruongHoc.capNhatThongTin(maSinhVien, test_2);
         if(resultCapNhatThongTin === true){
-            console.log("Cập Nhật Thành Công!");
+            console.log(`Cập Nhật Thành Công Sinh Viên Có Mã ${maSinhVien}: `);
             console.log("---Danh Sách Sau Khi Cập Nhật---   ");
             for(let i of quanLyTruongHoc.danhSach){
                 console.log(i);
@@ -239,7 +242,6 @@ const duLieuBanDau = [
             console.log(i);
         }
         if(quanLyTruongHoc.xoaHocSinh("ma2025005") === true){
-            console.log("Xóa Thành Công");
             console.log("---Danh Sách Sau Khi Xóa---");
             for(let i of quanLyTruongHoc.danhSach){
                 console.log(i);
