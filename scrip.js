@@ -46,7 +46,7 @@ const duLieuBanDau = [
             soLuongHocSinhNumber: 0,
 
             khoiTao: function (data) {
-                // sửa
+                // sửa.
                 for(let item of data){
                     this.danhSach.push(item);
                 }
@@ -128,33 +128,29 @@ const duLieuBanDau = [
             },
 
             thongKeHocLuc: function(){
-                const thongKe = {};
-                var demXs = 0;
-                var demGioi = 0;
-                var demKha = 0;
-                var demTrungBinh = 0;
-                var demKem= 0;
+                const thongKe = {
+                    "Xuất Sắc": 0,
+                    "Giỏi" : 0,
+                    "Khá" : 0,
+                    "Trung Bình": 0,
+                    "Kém": 0
+                };
                 
                 for(let i of this.danhSach){
                     if(i.diemTB >= 9.0){
-                        demXs++;
-                        thongKe.XuatSac = demXs;
+                        thongKe["Xuất Sắc"]++;
                     }
                     else if(i.diemTB >= 8.0){
-                        demGioi++;
-                        thongKe.Gioi = demGioi;
+                        thongKe["Giỏi"]++;
                     }
                     else if(i.diemTB >= 6.5){
-                        demKha++;
-                        thongKe.Kha = demKha;
+                        thongKe["Khá"]++;
                     }
                     else if(i.diemTB >= 5.0){
-                        demTrungBinh++;
-                        thongKe.TrungBinh = demKha;
+                        thongKe["Trung Bình"]++;
                     }
                     else {
-                        demKem++;
-                        thongKe.Kem = demKha;
+                        thongKe["Kém"]++;
                     }
                 }
                 return thongKe;
