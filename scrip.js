@@ -46,6 +46,7 @@ const duLieuBanDau = [
             soLuongHocSinhNumber: 0,
 
             khoiTao: function (data) {
+                // sửa
                 for(let item of data){
                     this.danhSach.push(item);
                 }
